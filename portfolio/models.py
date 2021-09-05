@@ -3,6 +3,7 @@ from django.template.defaultfilters import slugify
 
 class User_profile(models.Model):
     prof_pic = models.ImageField(upload_to="images", null=True, blank=True)
+    about_pic = models.ImageField(upload_to="images", null=True, blank=True)
     prof_description = models.CharField(max_length=20)
 
     def __str__(self):

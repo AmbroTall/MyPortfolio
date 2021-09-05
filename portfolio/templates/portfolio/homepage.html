@@ -52,7 +52,8 @@
             <p>Am also good at time management as I know time is an important factor<br> which when lost can never be recovered.</p>
         </div>
         {% load static %}
-        <img src="{% static 'images/Ambro2.jpg' %}" class="about-img">
+        <img src="{{ prof.about_pic.url }}" class="about-img">
+
     </div>
 </section>
 
