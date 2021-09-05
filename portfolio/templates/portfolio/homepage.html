@@ -1,0 +1,75 @@
+{% extends "index.html" %}
+{% block content %}
+
+<section id="home">
+    <i class="bi bi-facebook"></i>
+    <div class="home">
+    {% for prof in profile %}
+    <h1 class="homehead">Fullstack Developer</h1>
+    <p style="font-size:25px;" class="homedesc">{{ prof.prof_description }}<strong>Ambrose Mbithi</strong></p>
+    <img src="{{ prof.prof_pic.url }}" class="homeimg">
+
+    {% endfor %}
+    </div>
+
+    <div class="home-two">
+    {% for prof in profile %}
+    <div class="home-two-sec">
+        <img src="{{ prof.prof_pic.url }}" class="homeimg">
+        <div class="home-two-sec-p">
+            <p class="homedesc">{{ prof.prof_description }}<strong>Ambrose Mbithi</strong></p>
+        </div>
+    </div>
+    <h1 class="homehead">Full Stack Developer</h1>
+    {% endfor %}
+    </div>
+</section>
+
+
+<section id="myservices">
+    <h1 class="lin">My Skills</h1>
+    <p class="myservic"><i>This are the skills I possess as a fullstack developer</i></p>
+    <div class="row">
+        {% for skill in skills %}
+        <div class="skill">
+            <h3>{{ skill.skill_title }}</h3>
+            <p>{{ skill.skill_description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <a style="margin-bottom: 1rem;" class="btn btn-primary" href="">Contact Me</a>
+</section>
+
+
+<section class="abou-me" id="about" style="margin-top: 7%;">
+    <h2 class="title-about">Who I am</h2>
+    <div class="about-me" style="margin-top: 30px;">
+        <div class=about-me-body>
+            <h4 class="subtitle-about">FullStack developer;FrontEnd & BackEnd</h4>
+            <p>Hello, am a passionate programmer who loves solving problems through writing codes.<br> I always take my time to learn new skills and update my current ones as <br>technology trends keeps changing with time. </p>
+            <p>Its been three years since I started learning programming skills. <br>My aim is always to be effective and also help my team to achieve the required goal <br> and also to ensure client's satisfaction when working on a project.</p>
+            <p>I love working hard and completing my tasks before deadlines<br>with minimal or no supervision at all making it efficient <br>for me to work and learn almost in any environment.</p>
+            <p>Am also good at time management as I know time is an important factor<br> which when lost can never be recovered.</p>
+        </div>
+        {% load static %}
+        <img src="{% static 'images/Ambro2.jpg' %}" class="about-img">
+    </div>
+</section>
+
+<section class="port" id="projects" style="margin-top: 3%;">
+    <h1 class="title-about">My Work</h1>
+    <p style="text-align: center"><i>Below are some of my projects</i></p>
+
+    <div class="row-portfolio">
+        {% for project in projects %}
+        <div class="portfolio">
+            <a class="portfolio-item" href=""><img class="portfolio-img" src="{{ project.proj_img.url }}"></a>
+            <div class="layoff">
+                <h4>{{ project.proj_name }}</h4>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

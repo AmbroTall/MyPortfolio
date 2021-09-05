@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugin/fontawesome-free/css/all.min.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmbroseMbithi</title>
+</head>
+
+<style>
+
+
+*,
+*::before,
+*::after{
+box-sizing: border-box;
+
+}
+
+:root{
+--f-primary: 'Calibri';
+
+--fw-res:300;
+--fw-bold: 900;
+
+--clr-light: #fff;
+--clr-dark: #303030;
+--clr-accent: #6633FF;
+
+--fs-h1:3rem;
+--fs-h2:2.25rem;
+--fs-h3:1.25rem;
+--fs-body: 1rem;
+}
+
+html{
+scroll-behaviour: smooth ;
+}
+
+::selection{
+background-color: red;
+}
+
+
+@media(min-width:800px){
+:root{
+--fs-h1:4.5rem;
+--fs-h2:3.75rem;
+--fs-h3:1.5rem;
+--fs-body: 1.125rem;
+}
+}
+
+body{
+background-image: url("images/bgImage.jpg");
+background-color: purple;
+background-blend-mode: screen;
+background-position: center;
+background-size: cover;
+color: var(--clr-dark);
+margin: 0;
+font-family: var(--f-primary);
+font-size: var(--fs-body);
+line-height: 1.6;
+}
+
+#home{
+padding: 1rem 1rem;
+display: flex;
+justify-content: center;
+line-height: 2;
+height: 100vh;
+font-family: 'Roboto Slab', serif;
+}
+
+img{
+display: block;
+max-width: 100%;
+}
+
+<!--.homehead{-->
+<!--display: inline-block;-->
+<!--}-->
+
+.homehead,
+.subtitle-about{
+background-color: var(--clr-accent);
+}
+@media(max-width:600px){
+#home{
+margin-top: 20px;
+display: block;
+text-align: center;
+}
+.home-two{
+display: none;
+}
+.homedesc strong{
+display: block;
+
+}
+.homeimg{
+width: 60%;
+height: 300px;
+margin: auto;
+
+}
+
+}
+
+@media(min-width:600px){
+.homeimg{
+width: 250px;
+top:0;
+
+left: 0;
+
+}
+.home-two{
+display:block;
+width: 80%;
+margin: auto;
+}
+.home{
+display: none;
+}
+
+.home-two-sec{
+width: 70%;
+margin: auto;
+display: flex;
+justify-contents: space-between;
+}
+
+.home-two-sec-p{
+padding-left: 10px;
+}
+.homedesc{
+font-size: 3rem;
+font-weight: 100;
+}
+
+
+.homedesc strong{
+font-size: 4rem;
+
+display: block;
+}
+}
+
+
+
+#myservices{
+<!--height: 100vh;-->
+width: 80%;
+margin: auto;
+text-align: center;
+background-image: url("images/skillsbanner.jpg");
+background-size: cover;
+line-height: 1.6;
+padding: 3rem 2rem;
+background-color: var(--clr-dark);
+background-blend-mode: multiply;
+color: #fff;
+font-family: 'Roboto Slab', serif;
+}
+
+.row{
+margin-bottom: 2rem;
+margin-top: 2rem;
+
+}
+
+.skill{
+padding: 10px 0px;
+}
+.skill p{
+font-weight: 200;
+}
+@media(min-width:600px){
+.row{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+margin-bottom: 1.5rem;
+margin-top: 2rem;
+
+}
+.skill p{
+font-family: 'Roboto Slab', serif;
+font-weight: 300;
+line-height: 1.6;
+}
+}
+
+.lin::after{
+content: '';
+width: 15%;
+height: 2px;
+background: var(--clr-accent);
+display: block;
+margin: auto;
+transition: 0.5s;
+}
+
+@media(max-width: 600px){
+#myservices{
+width: 90%;
+margin: auto;
+}
+
+.abou-me{
+margin-bottom: 10%;
+padding: 1rem 1rem;
+text-align: center;
+}
+
+.about-img{
+border-radius: 50%;
+padding: .5rem 3rem;
+}
+.lin::after{
+content: '';
+width: 20%;
+height: 2px;
+background: var(--clr-accent);
+display: block;
+margin: auto;
+transition: 0.5s;
+margin-top: 10px;
+}
+
+.title-about::after{
+content: '';
+width: 20%;
+height: 2px;
+background: var(--clr-accent);
+display: block;
+margin: auto;
+margin-top: 10px;
+}
+.port-head::after{
+content: '';
+width: 20%;
+height: 2px;
+background: var(--clr-accent);
+display: block;
+margin: auto;
+margin-top: 10px;
+}
+.myservic{
+font-size: 15px;
+}
+.title-about{
+text-align: center;
+text-font: Calibri;
+}
+.porthead{text-align: center;}
+}
+
+
+@media(min-width: 600px){
+.abou-me{
+margin-top: 10%;
+height: 100vh;
+width: 80%;
+margin: auto;
+}
+
+.about-me{
+width: 80%;
+margin: auto;
+display: flex;
+justify-content: space-between;
+font-family: 'Roboto Slab', serif;
+}
+
+.about-img{
+width: 250px;
+height: 300px;
+}
+.title-about{
+text-align: center;
+font-family: 'Roboto Slab', serif;
+}
+
+.subtitle-about{
+display: block;
+padding: 5px 10px;
+}
+.lin::after{
+content: '';
+width: 13%;
+height: 2px;
+background: var(--clr-accent);
+display: block;
+margin: auto;
+transition: 0.5s;
+}
+}
+.port{
+width: 80%;
+margin: auto;
+text-align: center;
+background-image: url("images/workbanner.jpg");
+background-size: cover;
+padding: 3rem 3rem;
+background-color: var(--clr-dark);
+background-blend-mode: multiply;
+color: #fff;
+margin-bottom: 5%;
+}
+
+.row-portfolio{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.title-about::after{
+content: '';
+width: 13%;
+height: 2px;
+background: var(--clr-accent);
+display: block;
+margin: auto;
+}
+.
+
+@media(max-width: 600px){
+#id{
+margin-top: 5%;
+}
+}
+
+
+.layoff h4{
+width: 100%;
+font-weight: 600;
+color: silver;
+font-size: 26px;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+position: absolute;
+opacity: 1;
+}
+
+
+.portfolio{
+overflow: hidden;
+position: relative;
+}
+
+
+.portfolio-img{
+transition: transform 750ms ease;
+opacity: 250ms linear;
+}
+.portfolio-img:hover{
+transform: scale(1.2);
+opacity: .5;
+}
+
+</style>
+
+<body>
+{% include "portfolio/navbar.html" %}
+
+{% block content %}
+{% endblock %}
+
+{% include "portfolio/footer.html" %}
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
